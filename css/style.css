@@ -42,7 +42,7 @@ a {
   margin-bottom: 50px;
 }
 .headers h2{
-  font:  700 60px Josefin Sans;
+  font:  700 50px Josefin Sans;
   color: var(--main-color);
   width: 100%;
   text-align: center;
@@ -57,6 +57,9 @@ a {
 }
 
 @media (min-width: 768px) {
+  .headers h2 {
+    font-size: 60px;
+  }
   .container {
     max-width: 768px;
   }
@@ -733,3 +736,157 @@ section.testimonials .testimonials-wrapper .card .user h3 {
   }
 }
 /* End of Testimonials Section */
+/* Footer */
+footer {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+footer .actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: center;
+  padding: 50px 0;
+}
+
+footer .actions .list {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+footer .actions .list h2 {
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+footer .actions .list ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer .actions .list ul li a {
+  color: #fff;
+  font-weight: 100;
+  font-family: 'Expletus Sans', cursive;
+  transition: .3s;
+}
+
+footer .actions .newsletter h2 {
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+footer .actions .newsletter p {
+  font-weight: 100;
+  font-family: 'Expletus Sans', cursive;
+  margin-bottom: 20px;
+}
+
+footer .actions .newsletter form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+footer .actions .newsletter form input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  outline: none;
+  font-family: 'Expletus Sans', cursive;
+  font-weight: 600;
+}
+
+footer .actions .newsletter form button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Expletus Sans', cursive;
+  cursor: pointer;
+  transition: .3s;
+}
+
+footer .actions .newsletter form button:hover {
+  background-color: var(--sec-color);
+  color: #fff;
+}
+
+footer .actions .list ul li a:hover {
+  color: var(--sec-color);
+}
+
+footer .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 0;
+  border-top: 1px solid #fff;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer .social ul {
+  display: flex;
+  gap: 15px;
+}
+
+footer .social ul li a {
+  color: #fff;
+  transition: .3s;
+}
+
+footer .social ul li a:hover {
+  color: var(--sec-color);
+}
+
+footer .social p a, footer .social p span {
+  color: var(--sec-color);
+}
+
+@media (min-width: 768px) {
+  footer .actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  footer .actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer .actions .list {
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
+  footer .actions .list ul {
+    align-items: flex-start;
+  }
+  footer .actions .newsletter {
+    text-align: left;
+  }
+  footer .actions .newsletter form {
+    flex-direction: column;
+  }
+  footer .actions .newsletter form button {
+    width: fit-content;
+    margin-left: auto;
+  }
+  footer .social {
+    flex-direction: row;
+  }
+}
+
+/* End of Footer */
