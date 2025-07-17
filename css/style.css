@@ -9,3 +9,34 @@ body {
   overflow-x: hidden;
 }
 /* End of initial styles */
+/* Components and Utilities */
+.container {
+  margin: auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1230px;
+  }
+}
+/* End of Components and Utilities */
