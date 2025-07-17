@@ -2,6 +2,7 @@
 :root{
   --main-color: #2F2E41; 
   --sec-color: #E74242;
+  --ph-color: #3F3F3F;
   --main-bg-color: #FFFFFF;
   --sec-bg-color: #F0EDFF;
 }
@@ -356,7 +357,6 @@ section.hero .container img {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding-bottom: 0;
     flex-wrap: nowrap;
     padding: 30px 10px;
     align-items: center;
@@ -364,9 +364,98 @@ section.hero .container img {
   }
   .box i{
     position: static;
+    border: none;
   }
   .box h3, .box p{
     text-align: left;
   }
 }
 /* End Services Section */
+
+/* Start About Us Section */
+.aboutus{
+  position: relative;
+}
+.aboutus::after{
+  content: "";
+  background-image: url(../imgs/decorator.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 131px;
+  height: 302.46px;
+  display: none;
+}
+.aboutus::before{
+  content: "";
+  background-image: url(../imgs/decorator.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 131px;
+  height: 302.46px;
+  display: none;
+}
+.aboutus .info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.aboutus .image{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.aboutus img{
+  max-width: 100%;
+}
+.aboutus .text{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.aboutus h3{
+  color: var(--main-color);
+  font: 500 40px Expletus Sans;
+  margin-bottom: 10px;
+}
+.aboutus .info p{
+  color: var(--ph-color);
+  font: 400 italic 20px Expletus Sans;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .aboutus .info {
+    flex-direction: row;
+    justify-content:space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .aboutus .text{
+    justify-content: flex-start;
+    max-width: 500px;
+    align-content: flex-start;
+  }
+  .aboutus h3{
+    padding-top: 45px;
+    margin-bottom: 16px;
+  }
+  .aboutus .info p{
+    text-align: left;
+    border-left: 3px solid var(--sec-color);
+    padding-left: 21px;
+  }
+  .aboutus::after{
+    display: block;
+    right: 0;
+    bottom: -80px;
+    z-index: -1;
+  }
+  .aboutus::before{
+    top: -180px;
+    display: block;
+    left: -40px;
+    z-index: -1;
+  }
+}
+/* End About Us Section */
+
