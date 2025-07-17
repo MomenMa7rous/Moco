@@ -1,9 +1,11 @@
-/* variables */
+/* Variables */
 :root{
   --main-color: #2F2E41; 
   --sec-color: #E74242;
+  --main-bg-color: #FFFFFF;
+  --sec-bg-color: #F0EDFF;
 }
-/*end of variables */
+/*End of variables */
 /* Initial styles */
 * {
   margin: 0;
@@ -14,6 +16,15 @@
 body {
   overflow-x: hidden;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
 }
 /* End of initial styles */
 /* Components and Utilities */
@@ -37,7 +48,7 @@ body {
 .headers p{
   font: 500 16px Expletus Sans;
   line-height: 26px;
-  color: #2F2E41;
+  color: var(--main-color);
   max-width: 386px;
   text-align: center;
   margin-top: 13px;
@@ -67,7 +78,174 @@ body {
   }
 }
 /* End of Components and Utilities */
+/* Header */
+header {
+  padding: 20px 0;
+}
 
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+header .container nav ul {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+header .container nav ul li a{
+  padding: 5px 0;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+header .container nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--sec-color);
+  transition: .3s;
+}
+
+header .container nav ul li a:hover::after {
+  width: 100%;
+}
+
+header .container nav ul li a:hover {
+  color: var(--sec-color);
+}
+
+header .container .actions {
+  display: flex;
+  gap: 20px;
+}
+
+header .container .actions button {
+  all: unset;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+@media (min-width: 768px) {
+  header .container nav ul {
+    display: flex;
+  }
+  header .container .actions button.menu {
+    display: none;
+  }
+  header .container .actions button.mode {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--sec-color);
+    color: #fff;
+    font-size: 18px;
+  }
+}
+/* End of Header */
+/* Hero Section */
+section.hero {
+  padding: 60px 0;
+}
+
+section.hero .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+section.hero .container .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+section.hero .container .text h1 {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 600;
+}
+
+section.hero .container .text h1 span {
+  color: var(--sec-color);
+}
+
+section.hero .container .text a {
+  display: block;
+  width: fit-content;
+  padding: 8px 15px;
+  padding-top: 10px;
+  border: 3px solid var(--sec-color);
+  background-color: var(--sec-color);
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  transition: .3s;
+  font-weight: 600;
+}
+
+section.hero .container .text a:hover {
+  background: transparent;
+  color: var(--main-color);
+}
+
+section.hero .container img {
+  max-width: 100%;
+  flex: 1;
+}
+
+.separator {
+  width: 100%;
+  height: 3px;
+  background-color: var(--sec-color);
+  position: relative;
+}
+
+.separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: var(--sec-color);
+  border: 10px solid #fff;
+}
+
+@media (min-width: 1024px) {
+  section.hero {
+    padding: 100px 0;
+  }
+  section.hero .container {
+    flex-direction: row;
+  }
+  section.hero .container .text {
+    align-items: flex-start;
+  }
+  section.hero .container .text h1 {
+    text-align: left;
+    font-size: 111px;
+  }
+}
+/* End of Hero Section */
+/* Services Section */
 .services-section{
   padding-top: 36.1px;
   display: flex;
@@ -101,7 +279,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  border: 1px solid #2F2E41;
+  border: 1px solid var(--main-color);
   border-radius: 5px;
   transition-duration: 0.1s;
   transition-property: border,transform;
@@ -122,7 +300,7 @@ body {
   font-size: 31px;
   position: absolute;
   top: -25px;
-  border: 1px solid #2F2E41;
+  border: 1px solid var(--main-color);
   border-radius: 5px;
   width: 55px;
   height: 55px;
@@ -132,13 +310,13 @@ body {
   transition-duration: 0.2s;
 }
 .box:hover::after{
-  border-color: #E74242;
+  border-color: var(--sec-color);
   border-width: 4px;
   transform: translate(0,-7px);
   border-radius: 10px;
 }
 .box:hover i{
-  color: #2F2E41;
+  color: var(--main-color);
 }
 @media (max-width: 1024px) {
   .servs {
@@ -186,3 +364,4 @@ body {
     padding-left: 10px;
   }
 }
+/* End Services Section */
