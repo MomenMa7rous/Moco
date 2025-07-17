@@ -733,3 +733,100 @@ section.testimonials .testimonials-wrapper .card .user h3 {
   }
 }
 /* End of Testimonials Section */
+
+/* Start of Contact Us Section */
+.contact-us{
+  background-color: var(--sec-bg-color);
+}
+.contact-us .content{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.contact-us form{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.contact-us input , .contact-us textarea{
+  margin-bottom: 30px;
+  padding: 27px;
+  outline: none;
+  border: 1px solid var(--sec-color);
+  border-radius: 5px;
+  box-shadow: 6px 6px 1px var(--sec-color);
+  transition-duration: 0.2s;
+  transition-property: box-shadow;
+}
+.contact-us .submit{
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.contact-us input[type="submit"]{
+  background: linear-gradient(90deg, #E74242 0%, #EC7777 100%);
+  box-shadow: 5px 7px 7px #e742422d;
+  color: #FFFFFF;
+  font: 500 25px Expletus Sans;
+  border-radius: 10px;
+  padding: 15px 35px;
+  margin-bottom: 0;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+.contact-us input:focus , .contact-us textarea:focus{
+  outline: none;
+  box-shadow: 9px 9px 1px #e74242d5;
+}
+.contact-us input::placeholder{
+  font: 400 18px Expletus Sans;
+  color: #838383;
+}
+.contact-us .image{
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.contact-us img{
+  max-width: 100%;
+}
+.contact-us textarea{
+  padding-top: 27px;
+  height: 300px;
+  grid-column: span 2;
+  display: flex;
+  align-items: flex-start;
+  font: 400 18px Expletus Sans;
+  color: #838383;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .contact-us .content{
+    flex-direction: column-reverse;
+    gap: 35px;
+  }
+  .contact-us form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .contact-us input{
+    margin-bottom: 0;
+  }
+  .contact-us form input:nth-child(3){
+    grid-column: span 2;
+  }
+  .contact-us input[type="submit"]{
+    margin-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-us .content{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/* End of Contact Us Section */
