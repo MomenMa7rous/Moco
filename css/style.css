@@ -39,6 +39,7 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 .headers h2{
   font:  700 60px Josefin Sans;
@@ -77,6 +78,28 @@ a {
   .container {
     max-width: 1230px;
   }
+}
+section {
+  padding: 50px 0;
+}
+
+a.main-btn {
+  display: block;
+  width: fit-content;
+  padding: 8px 15px;
+  padding-top: 10px;
+  border: 3px solid var(--sec-color);
+  background-color: var(--sec-color);
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+  transition: .3s;
+  font-weight: 600;
+}
+
+a.main-btn:hover {
+  background: transparent;
+  color: var(--main-color);
 }
 /* End of Components and Utilities */
 /* Header */
@@ -186,25 +209,6 @@ section.hero .container .text h1 span {
   color: var(--sec-color);
 }
 
-section.hero .container .text a {
-  display: block;
-  width: fit-content;
-  padding: 8px 15px;
-  padding-top: 10px;
-  border: 3px solid var(--sec-color);
-  background-color: var(--sec-color);
-  font-size: 18px;
-  color: #fff;
-  border-radius: 5px;
-  transition: .3s;
-  font-weight: 600;
-}
-
-section.hero .container .text a:hover {
-  background: transparent;
-  color: var(--main-color);
-}
-
 section.hero .container img {
   max-width: 100%;
   flex: 1;
@@ -248,13 +252,11 @@ section.hero .container img {
 /* End of Hero Section */
 /* Services Section */
 .services-section{
-  padding-top: 36.1px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 .servs{
-  margin-top: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -327,6 +329,8 @@ section.hero .container img {
   .servs {
     max-width: 1024px;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .serv-image{
     margin-right: 0px;
@@ -371,8 +375,91 @@ section.hero .container img {
   }
 }
 /* End Services Section */
+/* Works Section */
+section.works {
+  background: var(--sec-bg-color);
+}
 
-/* Start About Us Section */
+section.works .works-wrapper {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+section.works .works-wrapper .work {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+section.works .works-wrapper .work img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+section.works .works-wrapper .work span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 20px;
+  display: block;
+  padding: 10px 20px;
+  background-color: var(--sec-color);
+  color: #fff;
+}
+
+section.works .works-wrapper .work .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 20px;
+  color: #fff;
+  gap: 15px;
+  background: #000000;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(219, 90, 90, 0) 50%);
+  transform: translateY(50%);
+  transition: .3s ease-in-out;
+}
+
+section.works .works-wrapper .work .info h3 {
+  font-size: 25px;
+}
+
+section.works .works-wrapper .work:hover .info {
+  transform: translateY(0);
+}
+
+section.works a.main-btn {
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  section.works .works-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  section.works .works-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  section.works .works-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* End of Works Section */
+/* About Us Section */
 .aboutus{
   position: relative;
 }
@@ -457,5 +544,4 @@ section.hero .container img {
     z-index: -1;
   }
 }
-/* End About Us Section */
-
+/* End of About Us Section */
