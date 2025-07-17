@@ -81,6 +81,7 @@ a {
 }
 section {
   padding: 50px 0;
+  overflow: hidden;
 }
 
 a.main-btn {
@@ -486,10 +487,12 @@ section.works a.main-btn {
   flex-wrap: wrap;
   flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
 }
 .aboutus .image{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  flex: 1;
   margin-bottom: 50px;
 }
 .aboutus img{
@@ -499,6 +502,7 @@ section.works a.main-btn {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex: 1;
 }
 .aboutus h3{
   color: var(--main-color);
@@ -507,8 +511,9 @@ section.works a.main-btn {
 }
 .aboutus .info p{
   color: var(--ph-color);
-  font: 400 italic 20px Expletus Sans;
+  font: 400 italic 16px Expletus Sans;
   text-align: center;
+  line-height: 1.8;
 }
 @media (min-width: 1024px) {
   .aboutus .info {
@@ -519,7 +524,6 @@ section.works a.main-btn {
   }
   .aboutus .text{
     justify-content: flex-start;
-    max-width: 500px;
     align-content: flex-start;
   }
   .aboutus h3{
@@ -530,11 +534,12 @@ section.works a.main-btn {
     text-align: left;
     border-left: 3px solid var(--sec-color);
     padding-left: 21px;
+    font-size: 18px;
   }
   .aboutus::after{
     display: block;
     right: 0;
-    bottom: -80px;
+    bottom: -160px;
     z-index: -1;
   }
   .aboutus::before{
