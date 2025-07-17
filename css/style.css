@@ -550,3 +550,49 @@ section.works a.main-btn {
   }
 }
 /* End of About Us Section */
+
+/* Start of our team section */
+.our-team{
+  background-color: var(--sec-bg-color);
+}
+.our-team .team-images{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.our-team .image{
+  margin-bottom: 50px;
+  border: 2px solid rgb(95, 95, 95);
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 4px 5px 5px rgb(172, 172, 172);
+  position: relative;
+}
+.our-team img{
+  width: 100%;
+  position: relative;
+}
+.our-team .image::after{
+  content: "John Doe";
+  font:500 23px Expletus Sans;
+  color: #FFFFFF;
+  background-color: var(--sec-color);
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  top: -25px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .our-team .team-images{
+    flex-direction: row;
+    gap: 21px;
+    padding-top: 30px;
+  }
+}
+/* End of our team section */
